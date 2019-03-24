@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import createSagaMiddleware from "redux-saga";
-import sagas from "./sagas";
-import weatherReducer from "./reducers/Weather";
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
+import sagas from './sagas';
+import weatherReducer from './reducers/Weather';
+import metricReducer from './reducers/Metric';
 
 export default () => {
   const rootReducer = combineReducers({
-    weather: weatherReducer
+    weather: weatherReducer,
+    metric: metricReducer
   });
 
   const composeEnhancers = composeWithDevTools({});
